@@ -15,10 +15,10 @@ function App() {
       </SignedOut>
 
       <SignedIn>
-        <SignOutButton mode='model' />
+        <SignOutButton mode='modal' />
       </SignedIn>
-
       <UserButton/>
+
     </>
   )
 }

@@ -5,10 +5,9 @@ import User from "../models/User.js"
 export const inngest = new Inngest({id:"interview-platform"});
 
 
-
 const syncUser = inngest.createFunction(
   {id:"sync-user"},
-  {event:"clerk/user.create"},
+  {event:"clerk/user.created"},
   
 
   async({event})=>{
@@ -32,7 +31,7 @@ const syncUser = inngest.createFunction(
 
 const deleteUserFromDb = inngest.createFunction(
   {id:"delete-user-from-db"},
-  {event:"clerk/user.create"},
+  {event:"clerk/user.deleted"},
   
 
   async({event})=>{

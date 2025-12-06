@@ -6,11 +6,11 @@ export const protectRoute = [
   async (req, res, next) => {
     try {
       const clerkId = req.auth().userId;
-      if (!clerkId) return res.status(401).join({ msg: "Unauthorize - invalid token" })
+      if (!clerkId) return res.status(401).join({message: "Unauthorize - invalid token" })
 
       // find user in db by clerk id
       const user = await User.findOne({ clerkId })
-      if (!user) return res.status(404).join({ msg: "User Not Found" })
+      if (!user) return res.status(404).join({ message: "User Not Found" })
 
       // attach user to req
       req.user = user

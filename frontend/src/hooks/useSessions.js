@@ -60,7 +60,7 @@ export const useEndSession = () => {
     mutationKey:["endSession"],
     mutationFn: () => sessionApi.endSession,
     onSuccess:()=>toast.success("Session ended successfully"),
-    onError:(error)=>toast.error(error.response?.data?.message || "Failed to join session")
+    onError:(error)=>toast.error(error.response?.data?.message || "Failed to End session")
   })
 
   return result;
